@@ -12,17 +12,18 @@ export default function Videos(props: any) {
     let handleVideoClick = props.handleVideoClick
     return (
 
-        <ScrollArea className="h-72 w-48 rounded-md border">
+        <ScrollArea className="flex h-72 w-80 rounded-md border">
 
             <div className="container">
                 {data.videos.map((data: any, index: any) => (
 
-                    <div key={index}>
+                    <div key={index} className='flex py-4'>
+                        {index + 1}
 
-                        <div className="text-xl">
+                        <div onClick={() => handleVideoClick(data)} className="text-xl pl-2 underline cursor-pointer">
                             {data.video_title}
                         </div>
-                        <div onClick={() => handleVideoClick(data)} className='underline'>Watch Video</div>
+                        {/* <div onClick={() => handleVideoClick(data)} className='underline cursor-pointer'>Watch Video</div> */}
                     </div>
 
                 ))}

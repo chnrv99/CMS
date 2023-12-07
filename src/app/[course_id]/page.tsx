@@ -86,19 +86,28 @@ export default function Home({ params }: { params: { course_id: string } }) {
   return (
     <>
       <Navbar />
-      <div className='flex flex-col   overflow-hidden bg-gradient-to-tl  bg-black text-foreground '>
+      <div className='overflow-hidden bg-gradient-to-tl  bg-black text-foreground '>
         <br />
         <br />
         <br />
         <br />
-        <>
-          <DisplayVideo data={selectedVideo} />
-        </>
-        <>
-          <Videos data={data} handleVideoClick={handleVideoClick}  />
-        </>
+        <h1 className="text-3xl bg-gradient-to-r items-center justify-center from-blue-900 to-violet-100 text-transparent bg-clip-text font-bold  text-center border-b-2 border-violet-200 mb-28 pb-4">Mathematics Club VITC CMS</h1>
+        <div className="flex">
+          <div className="container">
 
-        
+            <DisplayVideo data={selectedVideo} />
+          </div>
+
+
+          <div className="container">
+
+            <Videos data={data} handleVideoClick={handleVideoClick} />
+          </div>
+        </div>
+
+
+
+
 
         <Footer />
 
