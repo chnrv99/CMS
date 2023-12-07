@@ -13,7 +13,7 @@ const courses_year_1 = [
     title: 'Mathematics 1',
     course_code: 'MAT101',
     course_description: 'This course is about the basics of mathematics -1',
-    link: 'https://www.google.com'
+    link: 'http://localhost:3000/MAT101'
   },
   {
     title: 'Mathematics 2',
