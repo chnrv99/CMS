@@ -11,6 +11,7 @@ import Image from 'next/image'
 import DisplayVideo from '@/components/DisplayVideo'
 import Videos from '@/components/Videos'
 import { useState } from 'react'
+import PDFs_links from '@/components/PDFs_Links'
 
 // const data = {
 //   video_title: 'Mathematics 1 youtube video',
@@ -72,6 +73,45 @@ const data = {
 
 }
 
+let pdfs = {
+  pdfs: [
+    {
+      title: 'Module 1',
+      link: 'https://www.google.com'
+    },
+    {
+      title: 'Module 2',
+      link: 'https://www.google.com'
+    },
+    {
+      title: 'Module 3',
+      link: 'https://www.google.com'
+    },
+    {
+      title: 'Module 4',
+      link: 'https://www.google.com'
+    },
+    {
+      title: 'Module 5',
+      link: 'https://www.google.com'
+    },
+    {
+      title: 'Module 6',
+      link: 'https://www.google.com'
+    },
+    {
+      title: 'Module 7',
+      link: 'https://www.google.com'
+    },
+    {
+      title: 'Module 8',
+      link: 'https://www.google.com'
+    },
+
+  ]
+
+}
+
 
 
 export default function Home({ params }: { params: { course_id: string } }) {
@@ -92,17 +132,24 @@ export default function Home({ params }: { params: { course_id: string } }) {
         <br />
         <br />
         <h1 className="text-3xl bg-gradient-to-r items-center justify-center from-blue-900 to-violet-100 text-transparent bg-clip-text font-bold  text-center border-b-2 border-violet-200 mb-28 pb-4">Mathematics Club VITC CMS</h1>
-        <div className="flex">
-          <div className="container">
+        <div className="flex items-center justify-center ">
+          <div className="container self-center pb-2 ml-20">
 
             <DisplayVideo data={selectedVideo} />
           </div>
 
 
-          <div className="container">
+          <div className="container self-center ml-20">
 
             <Videos data={data} handleVideoClick={handleVideoClick} />
           </div>
+        </div>
+
+        <div className="container mb-2">
+          <div className='container'>
+            Download PDFs
+          </div>
+          <PDFs_links data={pdfs} />
         </div>
 
 
