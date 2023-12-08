@@ -159,8 +159,9 @@ export default function Home({ params }: { params: { course_id: string } }) {
   
   let selectedVideoNew
   const handleVideoClick = (video: any) => {
-    // setSelectedVideo(video)
-    selectedVideoNew = video
+    console.log("Inside handleVideoClick:", video)
+    setSelectedVideo(video)
+    // selectedVideoNew = video
   }
   
   
@@ -189,7 +190,7 @@ export default function Home({ params }: { params: { course_id: string } }) {
           <div className="flex items-center justify-center ">
             <div className="container self-center pb-2 ml-20">
 
-              <DisplayVideo data={selectedVideoNew} />
+              <DisplayVideo data={selectedVideo} />
             </div>
 
 
