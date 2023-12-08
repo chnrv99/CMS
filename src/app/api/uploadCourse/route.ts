@@ -2,18 +2,21 @@ import { connectMongoDB } from "@/lib/mongodb";
 import Course from "@/models/courses";
 
 import { NextResponse } from "next/server";
-
+import { GetServerSidePropsContext } from 'next';
 
 
 export async function POST(request: any, response: any) {
-    const {course_code, video_title, video_iframe} = await request.json();
-    if (!video_title || !video_iframe) {
+    const {course_code, course_title} = await request.json();
+    if (!course_code || !course_title) {
         return NextResponse.json({message:"Missing fields"}, {status: 400});
     }
     else {
-    //    push the data into the pdfs array
-        await Course.updateOne({course_code}, {$push: {videos: {video_title, video_iframe}}});
-
+        await Course.create({
+            course_code,
+            course_title,
+            videos: [],
+            pdfs: []
+        });
         return NextResponse.json({message:"Course created successfully"}, {status: 201});
     }
 }
