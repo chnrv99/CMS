@@ -10,6 +10,10 @@ const courseSchema = new Schema(
       type: String,
       required: true,
     },
+    course_description: {
+      type: String, 
+      required: true,
+    },
     // videos is an array, inside that we have video_title and video_iframe
     videos: [
       {
@@ -44,5 +48,5 @@ const courseSchema = new Schema(
 
 );
 
-const Course = models.User || mongoose.model("Course", courseSchema);
+const Course = models.Course || mongoose.model("Course", courseSchema);
 export default Course;

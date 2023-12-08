@@ -44,6 +44,14 @@ const profileFormSchema = z.object({
     .max(40, {
       message: "Code must not be longer than 40 characters.",
     }),
+    course_description: z
+    .string()
+    .min(5, {
+      message: "Description must be at least 5 characters.",
+    })
+    .max(200, {
+      message: "Description must not be longer than 200 characters.",
+    }),
 
 })
 
@@ -112,6 +120,22 @@ export default function UploadCourse() {
               </FormControl>
               <FormDescription>
                 Enter the Course Title for the course
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+                <FormField
+          control={form.control}
+          name="course_description"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Course Description</FormLabel>
+              <FormControl>
+                <Textarea placeholder="Enter Course Description" {...field} />
+              </FormControl>
+              <FormDescription>
+                Enter the Course Description for the course
               </FormDescription>
               <FormMessage />
             </FormItem>

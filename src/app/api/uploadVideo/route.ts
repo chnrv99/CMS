@@ -1,4 +1,4 @@
-import { connectMongoDB } from "@/lib/mongodb";
+import { connectMongoDB, disconnectMongoDB } from "@/lib/mongodb";
 import Course from "@/models/courses";
 
 import { NextResponse } from "next/server";
@@ -14,6 +14,7 @@ export async function POST(request: any, response: any) {
     else {
     //    push the data into the pdfs array
         await Course.updateOne({course_code}, {$push: {videos: {video_title, video_iframe}}});
+        await disconnectMongoDB();
 
         return NextResponse.json({message:"Course created successfully"}, {status: 201});
     }

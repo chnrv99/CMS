@@ -33,6 +33,7 @@ const notifications = [
 
 
 type CardProps = React.ComponentProps<typeof Card>
+let url = 'http://localhost:3000/'
 
 export default function Courses({ className, ...props }: any) {
     console.log(props)
@@ -80,7 +81,7 @@ export default function Courses({ className, ...props }: any) {
                 </div>
             </CardContent>
             <CardFooter>
-                <Link href={props.data.link}>
+                <Link href={url+props.data.course_code}>
                     <Button className="w-full">
                        Go to course
                     </Button>

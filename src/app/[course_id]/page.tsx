@@ -10,7 +10,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import DisplayVideo from '@/components/DisplayVideo'
 import Videos from '@/components/Videos'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PDFs_links from '@/components/PDFs_Links'
 
 // const data = {
@@ -114,10 +114,40 @@ let pdfs = {
 
 
 
-export default function Home({ params }: { params: { course_id: string } }) {
-  console.log(params.course_id)
+async function getCourseDetails(course_id: string) {
+  const res =  await fetch('/api/fetchData', { cache: "no-store" })
+  const data =  await res.json()
+  // return data where course_id = course_id
+  // console.log(data)
+  let course_details = data.filter((course: any) => course.course_code == course_id)
+  console.log(course_details)
+  return course_details[0]
+}
 
+
+
+export default function Home({ params }: { params: { course_id: string } }) {
+  // console.log(params.course_id)
   const [selectedVideo, setSelectedVideo] = useState(data.videos[0])
+  const [courseData, setCourseData] = useState({})
+  const [loading, setLoading] = useState(false)
+  useEffect(()=>{
+    setLoading(true)
+    getCourseDetails(params.course_id).then((data)=>{
+      if(data === undefined || null){
+        console.log("No data found")
+        
+      }
+      else{
+
+        setCourseData(data)
+        setLoading(false)
+      }
+    })
+  })
+  
+
+
   const handleVideoClick = (video: any) => {
     setSelectedVideo(video)
   }
