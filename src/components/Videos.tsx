@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
+import svg from '../../public/Vector.svg'
 
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Separator } from '@/components/ui/separator'
+import Image from 'next/image'
 
 
 
@@ -12,16 +14,19 @@ export default function Videos(props: any) {
     let handleVideoClick = props.handleVideoClick
     return (
 
-        <ScrollArea className="flex h-[40vh] w-[50vh] rounded-md border m-4">
+        <ScrollArea className="flex h-[40vh] w-[50vh] rounded-md border">
 
-            <div className="container">
+            <div className="">
                 {data.videos.map((data: any, index: any) => (
 
-                    <div key={index} className='flex py-4'>
+                    <div key={index} className='flex justify-between my-1 py-4 px-4 bg-slate-400 text-black'>
                         {index + 1}
 
-                        <div onClick={() => handleVideoClick(data)} className="text-xl pl-2 underline cursor-pointer">
+                        <div onClick={() => handleVideoClick(data)} className="text-xl pl-10 underline cursor-pointer">
                             {data.video_title}
+                        </div>
+                        <div>
+                            <Image src={svg} alt="Play Logo" className=''/>
                         </div>
                         {/* <div onClick={() => handleVideoClick(data)} className='underline cursor-pointer'>Watch Video</div> */}
                     </div>

@@ -126,7 +126,7 @@ export default function Home({ params }: { params: { course_id: string } }) {
   return (
     <>
       <Navbar />
-      <div className='overflow-hidden bg-gradient-to-tl  bg-black text-foreground '>
+      <div className='overflow-hidden bg-black text-foreground '>
         <br />
         <br />
         <br />
