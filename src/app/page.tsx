@@ -4,6 +4,8 @@ import Courses from '@/components/Courses'
 import Footer from '@/components/Footer'
 
 import Navbar from '@/components/Navbar'
+import { connectMongoDB } from '@/lib/mongodb'
+import Course from '@/models/courses'
 
 
 import Image from 'next/image'
@@ -95,9 +97,12 @@ import Image from 'next/image'
 let url = process.env.url
 
 async function getCourses() {
-  const res = await fetch(url + 'api/fetchData', { cache: "no-store" })
-  const data = await res.json()
-  console.log("The data is:", data)
+  // const res = await fetch(url + '/api/fetchData', { cache: "no-store" })
+  // const data = await res.json()
+  // console.log("The data is:", data)
+  await connectMongoDB();
+  const data = await Course.find({});
+  
   return data
 
 }
