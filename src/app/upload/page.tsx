@@ -63,12 +63,12 @@ export default function Home() {
           {/* <UploadCourse />
           <br />
           <br /> */}
-          <h1 className="text-3xl">Upload PDF</h1>
+          {/* <h1 className="text-3xl">Upload PDF</h1>
           <UploadPDF />
-          {/* <br />
           <br />
+          <br /> */}
           <h1 className="text-3xl">Upload Video</h1>
-          <UploadVideo /> */}
+          <UploadVideo />
           <br />
           <br />
 

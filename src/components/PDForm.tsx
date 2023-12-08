@@ -96,7 +96,7 @@ export default function UploadPDF() {
             <FormItem>
               <FormLabel>Course Code</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Code" {...field} />
               </FormControl>
               <FormDescription>
                 Enter the Course Code of the course you want to upload PDFs for.
@@ -112,7 +112,7 @@ export default function UploadPDF() {
             <FormItem>
               <FormLabel>Title of the PDF</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="PDF" {...field} />
               </FormControl>
               <FormDescription>
                 Enter the Title of the PDF.
@@ -128,7 +128,7 @@ export default function UploadPDF() {
             <FormItem>
               <FormLabel>Link of the PDF</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Link" {...field} />
               </FormControl>
               <FormDescription>
                 Enter the link of the PDF.

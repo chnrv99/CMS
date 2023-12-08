@@ -39,18 +39,18 @@ const profileFormSchema = z.object({
     video_title: z
     .string()
     .min(2, {
-      message: "Title of PDF must be at least 2 characters.",
+      message: "Title of Video must be at least 2 characters.",
     })
     .max(30, {
-      message: "Title of PDF must not be longer than 30 characters.",
+      message: "Title of Video must not be longer than 30 characters.",
     }),
     video_iframe: z
     .string()
     .min(2, {
-      message: "Link of PDF must be at least 2 characters.",
+      message: "Link of Video must be at least 2 characters.",
     })
     .max(100, {
-      message: "Link must not be longer than 100 characters.",
+      message: "Link must Video be longer than 100 characters.",
     }),
   
 })
@@ -59,14 +59,14 @@ type ProfileFormValues = z.infer<typeof profileFormSchema>
 
 
 
-export default function UploadPDF() {
+export default function UploadVideo() {
   const form = useForm<ProfileFormValues>()
 
   
 
-  async function onSubmitPDF(data: ProfileFormValues) {
+  async function onSubmitVideo(data: ProfileFormValues) {
     console.log(JSON.stringify(data, null, 2))
-    await fetch('/api/uploadPDF', {
+    await fetch('/api/uploadVideo', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ export default function UploadPDF() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmitPDF)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmitVideo)} className="space-y-8">
         <FormField
           control={form.control}
           name="course_code"
@@ -96,10 +96,10 @@ export default function UploadPDF() {
             <FormItem>
               <FormLabel>Course Code</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Code" {...field} />
               </FormControl>
               <FormDescription>
-                Enter the Course Code of the course you want to upload PDFs for.
+                Enter the Course Code of the course you want to upload Videos for.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -110,12 +110,12 @@ export default function UploadPDF() {
           name="video_title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Title of the PDF</FormLabel>
+              <FormLabel>Title of the Video</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Title" {...field} />
               </FormControl>
               <FormDescription>
-                Enter the Title of the PDF.
+                Enter the Title of the Video.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -126,19 +126,19 @@ export default function UploadPDF() {
           name="video_iframe"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Link of the PDF</FormLabel>
+              <FormLabel>IFrame of the Video</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Link" {...field} />
               </FormControl>
               <FormDescription>
-                Enter the link of the PDF.
+                Enter the link of the Video.
               </FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
         
-        <Button type="submit">Update profile</Button>
+        <Button type="submit">Add Video</Button>
       </form>
     </Form>
   )
