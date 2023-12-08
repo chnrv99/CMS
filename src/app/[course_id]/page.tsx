@@ -145,7 +145,7 @@ export default function Home({ params }: { params: { course_id: string } }) {
           </div>
         </div>
 
-        <div className="container mb-2">
+        <div className=" container mb-2">
           <div className='container'>
             Download PDFs
           </div>
