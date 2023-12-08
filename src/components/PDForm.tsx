@@ -28,78 +28,78 @@ import { Textarea } from "@/components/ui/textarea"
 import { toast } from "@/components/ui/use-toast"
 
 const profileFormSchema = z.object({
-  username: z
+  course_code: z
     .string()
     .min(2, {
-      message: "Username must be at least 2 characters.",
+      message: "Code must be at least 2 characters.",
     })
     .max(30, {
-      message: "Username must not be longer than 30 characters.",
+      message: "Code must not be longer than 30 characters.",
     }),
-  email: z
-    .string({
-      required_error: "Please select an email to display.",
+    title: z
+    .string()
+    .min(2, {
+      message: "Title of PDF must be at least 2 characters.",
     })
-    .email(),
-  bio: z.string().max(160).min(4),
-  urls: z
-    .array(
-      z.object({
-        value: z.string().url({ message: "Please enter a valid URL." }),
-      })
-    )
-    .optional(),
+    .max(30, {
+      message: "Title of PDF must not be longer than 30 characters.",
+    }),
+    link: z
+    .string()
+    .min(2, {
+      message: "Link of PDF must be at least 2 characters.",
+    })
+    .max(100, {
+      message: "Link must not be longer than 100 characters.",
+    }),
+  
 })
 
 type ProfileFormValues = z.infer<typeof profileFormSchema>
 
-// This can come from your database or API.
-const defaultValues: Partial<ProfileFormValues> = {
-  bio: "I own a computer.",
-  urls: [
-    { value: "https://shadcn.com" },
-    { value: "http://twitter.com/shadcn" },
-  ],
-}
+
 
 export default function UploadPDF() {
-  const form = useForm<ProfileFormValues>({
-    resolver: zodResolver(profileFormSchema),
-    defaultValues,
-    mode: "onChange",
-  })
+  const form = useForm<ProfileFormValues>()
 
-  const { fields, append } = useFieldArray({
-    name: "urls",
-    control: form.control,
-  })
+  
 
-  function onSubmit(data: ProfileFormValues) {
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
+  async function onSubmitPDF(data: ProfileFormValues) {
+    console.log(JSON.stringify(data, null, 2))
+    await fetch('/api/uploadPDF', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+
     })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+
+      });
+
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmitPDF)} className="space-y-8">
         <FormField
           control={form.control}
-          name="username"
+          name="course_code"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Course Code</FormLabel>
               <FormControl>
                 <Input placeholder="shadcn" {...field} />
               </FormControl>
               <FormDescription>
-                This is your public display name. It can be your real name or a
-                pseudonym. You can only change this once every 30 days.
+                Enter the Course Code of the course you want to upload PDFs for.
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -107,83 +107,37 @@ export default function UploadPDF() {
         />
         <FormField
           control={form.control}
-          name="email"
+          name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a verified email to display" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="m@example.com">m@example.com</SelectItem>
-                  <SelectItem value="m@google.com">m@google.com</SelectItem>
-                  <SelectItem value="m@support.com">m@support.com</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormDescription>
-                You can manage verified email addresses in your{" "}
-                <Link href="/examples/forms">email settings</Link>.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="bio"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Bio</FormLabel>
+              <FormLabel>Title of the PDF</FormLabel>
               <FormControl>
-                <Textarea
-                  placeholder="Tell us a little bit about yourself"
-                  className="resize-none"
-                  {...field}
-                />
+                <Input placeholder="shadcn" {...field} />
               </FormControl>
               <FormDescription>
-                You can <span>@mention</span> other users and organizations to
-                link to them.
+                Enter the Title of the PDF.
               </FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
-        <div>
-          {fields.map((field, index) => (
-            <FormField
-              control={form.control}
-              key={field.id}
-              name={`urls.${index}.value`}
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className={cn(index !== 0 && "sr-only")}>
-                    URLs
-                  </FormLabel>
-                  <FormDescription className={cn(index !== 0 && "sr-only")}>
-                    Add links to your website, blog, or social media profiles.
-                  </FormDescription>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          ))}
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            className="mt-2"
-            onClick={() => append({ value: "" })}
-          >
-            Add URL
-          </Button>
-        </div>
+        <FormField
+          control={form.control}
+          name="link"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Link of the PDF</FormLabel>
+              <FormControl>
+                <Input placeholder="shadcn" {...field} />
+              </FormControl>
+              <FormDescription>
+                Enter the link of the PDF.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        
         <Button type="submit">Update profile</Button>
       </form>
     </Form>

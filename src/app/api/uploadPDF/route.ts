@@ -15,6 +15,6 @@ export async function POST(request: any, response: any) {
     //    push the data into the pdfs array
         await Course.updateOne({course_code}, {$push: {pdfs: {title, link}}});
 
-        return NextResponse.json({message:"Course created successfully"}, {status: 201});
+        return NextResponse.json({message:"PDF Added successfully"}, {status: 201});
     }
 }

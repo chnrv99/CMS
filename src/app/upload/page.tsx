@@ -59,18 +59,18 @@ export default function Home() {
 
           <br />
           <br />
-          <h1 className="text-3xl">Upload Course</h1>
-          <UploadCourse />
-          <br />
-          <br />
-          {/* <h1 className="text-3xl">Upload PDF</h1>
-          <UploadPDF />
-          <br />
-          <br />
-          <h1 className="text-3xl">Upload Video</h1>
-          <UploadVideo />
+          {/* <h1 className="text-3xl">Upload Course</h1> */}
+          {/* <UploadCourse />
           <br />
           <br /> */}
+          <h1 className="text-3xl">Upload PDF</h1>
+          <UploadPDF />
+          {/* <br />
+          <br />
+          <h1 className="text-3xl">Upload Video</h1>
+          <UploadVideo /> */}
+          <br />
+          <br />
 
 
         </div>
