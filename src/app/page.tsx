@@ -97,12 +97,12 @@ import Image from 'next/image'
 let url = process.env.url
 
 async function getCourses() {
-  // const res = await fetch(url + '/api/fetchData', { cache: "no-store" })
-  // const data = await res.json()
-  // console.log("The data is:", data)
-  await connectMongoDB();
-  const data = await Course.find({});
-  
+  const res = await fetch(url + '/api/fetchData', { cache: "no-store" })
+  const data = await res.json()
+  console.log("The data is:", data)
+  // await connectMongoDB();
+  // const data = await Course.find({});
+
   return data
 
 }
