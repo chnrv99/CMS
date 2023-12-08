@@ -140,7 +140,7 @@ type courseData = {
 
 export default function Home({ params }: { params: { course_id: string } }) {
   // console.log(params.course_id)
-  const [courseData, setCourseData] = useState({})
+  const [courseData, setCourseData] = useState<any | null>({})
   const [selectedVideo, setSelectedVideo] = useState(undefined)
 
   useEffect(() => {
