@@ -92,7 +92,7 @@ import Image from 'next/image'
 //   },
 // ]
 
-let url = 'http://localhost:3000/'
+let url = process.env.url
 
 async function getCourses() {
   const res = await fetch(url + 'api/fetchData', { cache: "no-store" })
