@@ -16,6 +16,6 @@ export async function POST(request: any, response: any) {
         await Course.updateOne({course_code}, {$push: {videos: {video_title, video_iframe}}});
         await disconnectMongoDB();
 
-        return NextResponse.json({message:"Course created successfully"}, {status: 201});
+        return NextResponse.json({message:"Video Added successfully"}, {status: 201});
     }
 }
