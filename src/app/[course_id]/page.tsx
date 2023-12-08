@@ -145,11 +145,14 @@ export default function Home({ params }: { params: { course_id: string } }) {
           </div>
         </div>
 
-        <div className=" container mb-2">
+        <div className="flex flex-col  mb-2">
           <div className='container'>
             Download PDFs
           </div>
-          <PDFs_links data={pdfs} />
+          <div className="container">
+
+            <PDFs_links data={pdfs} />
+          </div>
         </div>
 
 

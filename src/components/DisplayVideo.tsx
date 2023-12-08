@@ -9,14 +9,14 @@ export default function DisplayVideo(props: any) {
     return (
         <>
 
-            <div className=' container'>
+            <div className='flex mx-auto container'>
                 <div className=''>
 
                     
 
                     <h1 className="text-3xl">{data.video_title}</h1>
 
-                    <iframe width="560" height="315" src={data.video_iframe} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                    <iframe width="800" height="500" src={data.video_iframe} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
 
                 </div>
 
