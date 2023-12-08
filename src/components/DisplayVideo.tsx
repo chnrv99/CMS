@@ -14,7 +14,8 @@ export default function DisplayVideo(props: any) {
 
                     
 
-                    <h1 className="text-3xl">{data.video_title}</h1>
+                    <h1 className="text-3xl font-bold text-yellow-100">{data.video_title}</h1>
+                    <br />
 
                     <iframe width="800" height="500" src={data.video_iframe} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
 

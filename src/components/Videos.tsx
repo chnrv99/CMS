@@ -19,7 +19,7 @@ export default function Videos(props: any) {
             <div className="">
                 {data.map((data: any, index: any) => (
 
-                    <div key={index} className='flex justify-between my-1 py-4 px-4 bg-slate-400 text-black'>
+                    <div key={index} className='flex justify-between my-1 py-4 px-4 bg-yellow-100 text-black'>
                         {index + 1}
 
                         <div onClick={() => handleVideoClick(data)} className="text-xl pl-10 underline cursor-pointer">

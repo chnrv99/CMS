@@ -151,20 +151,20 @@ export default function Home({ params }: { params: { course_id: string } }) {
       } else {
         setCourseData(data)
         setSelectedVideo(data.videos[0])
-        
+
       }
     });
   }, [params.course_id]); // Dependency array
-  
-  
+
+
   let selectedVideoNew
   const handleVideoClick = (video: any) => {
     console.log("Inside handleVideoClick:", video)
     setSelectedVideo(video)
     // selectedVideoNew = video
   }
-  
-  
+
+
   const data = courseData.videos
   const pdfs = courseData.pdfs
   if (data != undefined || pdfs != undefined) {
@@ -173,7 +173,7 @@ export default function Home({ params }: { params: { course_id: string } }) {
     // handleVideoClick(courseData.videos[0])
     selectedVideoNew = courseData.videos[0]
 
-    
+
 
 
 
@@ -186,7 +186,9 @@ export default function Home({ params }: { params: { course_id: string } }) {
           <br />
           <br />
           <br />
-          <h1 className="text-3xl bg-gradient-to-r items-center justify-center from-blue-900 to-violet-100 text-transparent bg-clip-text font-bold  text-center border-b-2 border-violet-200 mb-28 pb-4">Mathematics Club VITC CMS</h1>
+          <h1 className="text-5xl bg-gradient-to-r items-center justify-center from-yellow-100 to-yellow-600 text-transparent bg-clip-text font-bold text-center border-b-2 border-yellow-200 mb-28 pb-4 mx-auto">
+            Mathematics Club VITC CMS
+          </h1>
           <div className="flex items-center justify-center ">
             <div className="container self-center pb-2 ml-20">
 
