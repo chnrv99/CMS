@@ -33,7 +33,7 @@ export default function Navbar() {
 					<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
 						<div className="flex justify-between gap-8">
 							<Link
-								href="#"
+								href="/"
 								className="duration-200 text-yellow-100 hover:text-zinc-400 p-2 text-lg font-semibold"
 							>
 								Home
