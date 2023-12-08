@@ -14,7 +14,7 @@ export default function Videos(props: any) {
     let handleVideoClick = props.handleVideoClick
     return (
 
-        <ScrollArea className="flex h-[40vh] w-[50vh] rounded-md border">
+        <ScrollArea className="flex lg:h-[40vh] lg:w-[50vh] rounded-md border">
 
             <div className="">
                 {data.map((data: any, index: any) => (

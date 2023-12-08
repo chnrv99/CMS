@@ -189,24 +189,25 @@ export default function Home({ params }: { params: { course_id: string } }) {
           <h1 className="text-5xl bg-gradient-to-r items-center justify-center from-yellow-100 to-yellow-600 text-transparent bg-clip-text font-bold text-center border-b-2 border-yellow-200 mb-28 pb-4 mx-auto">
             Mathematics Club VITC CMS
           </h1>
-          <div className="flex items-center justify-center ">
-            <div className="container self-center pb-2 ml-20">
+          <div className="lg:flex lg:flex-row items-center justify-center md:flex md:flex-col ">
+            <div className="container lg:self-center pb-2 lg:ml-20">
 
               <DisplayVideo data={selectedVideo} />
             </div>
 
 
-            <div className="container self-center ml-20">
+            <div className="container lg:self-center lg:ml-20">
 
               <Videos data={data} handleVideoClick={handleVideoClick} />
             </div>
           </div>
+          <br />
 
           <div className="flex flex-col  mb-2">
-            <div className='container'>
+            <div className=' lg:ml-28 md:container text-3xl font-bold text-yellow-100'>
               Download PDFs
             </div>
-            <div className="container">
+            <div className="container lg:ml-20">
 
               <PDFs_links data={pdfs} />
             </div>
