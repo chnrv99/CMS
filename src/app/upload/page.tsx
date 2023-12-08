@@ -9,6 +9,8 @@ import Link from 'next/link'
 
 import Image from 'next/image'
 import  UploadCourse from '@/components/CourseForm'
+import UploadPDF from '@/components/PDForm'
+import UploadVideo from '@/components/VideoForm'
 
 const data = {
   video_title: 'Mathematics 1 youtube video',
@@ -55,7 +57,21 @@ export default function Home() {
 
           </div>
 
+          <br />
+          <br />
+          <h1 className="text-3xl">Upload Course</h1>
           <UploadCourse />
+          <br />
+          <br />
+          {/* <h1 className="text-3xl">Upload PDF</h1>
+          <UploadPDF />
+          <br />
+          <br />
+          <h1 className="text-3xl">Upload Video</h1>
+          <UploadVideo />
+          <br />
+          <br /> */}
+
 
         </div>
         <Footer />

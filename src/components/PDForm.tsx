@@ -62,7 +62,7 @@ const defaultValues: Partial<ProfileFormValues> = {
   ],
 }
 
-export default function UploadCourse() {
+export default function UploadPDF() {
   const form = useForm<ProfileFormValues>({
     resolver: zodResolver(profileFormSchema),
     defaultValues,
