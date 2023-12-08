@@ -95,7 +95,7 @@ import Image from 'next/image'
 let url = 'http://localhost:3000/'
 
 async function getCourses() {
-  const res = await fetch(url + 'api/fetchData', {cache:"no-store"})
+  const res = await fetch(url + 'api/fetchData', { cache: "no-store" })
   const data = await res.json()
   console.log("The data is:", data)
   return data
@@ -115,19 +115,25 @@ export default async function Home() {
   return (
     <>
       <Navbar />
-      <div className='flex flex-col   overflow-hidden bg-gradient-to-tl  bg-black text-foreground '>
+      <div className='flex flex-col   overflow-hidden bg-gradient-to-tl  bg-black text-yellow-100 '>
         <br />
         <br />
         <br />
         <br />
 
-        <div className='flex container'>
+        <div className=' container'>
           <div className=''>
 
-            <h1 className="text-3xl bg-gradient-to-r items-center justify-center from-blue-900 to-violet-100 text-transparent bg-clip-text font-bold  text-center border-b-2 border-violet-200 mb-28 pb-4">Mathematics Club VITC CMS</h1>
+            <div className="flex justify-center">
+
+              <h1 className="text-5xl bg-gradient-to-r items-center justify-center from-yellow-100 to-yellow-600 text-transparent bg-clip-text font-bold text-center border-b-2 border-yellow-200 mb-28 pb-4 mx-auto">
+                Mathematics Club VITC CMS
+              </h1>
+            </div>
 
             <div className="">
-              <h1 className="text-xl">Year 1</h1>
+              <h1 className="text-3xl font-bold">Year 1</h1>
+              <br />
               <div className="container flex flex-wrap justify-between">
                 {courses_year_1.map((data: any, index: any) => (
                   <Courses key={index} data={data} />
@@ -137,7 +143,8 @@ export default async function Home() {
             <br />
             <br />
             <div className="">
-              <h1 className="text-xl">Year 2</h1>
+              <h1 className="text-3xl font-bold">Year 2</h1>
+              <br />
               <div className="container flex flex-wrap justify-between">
 
                 {courses_year_2.map((data: any, index: any) => (
@@ -150,7 +157,8 @@ export default async function Home() {
             <br />
             <br />
             <div className="">
-              <h1 className="text-xl">Year 3</h1>
+              <h1 className="text-3xl font-bold">Year 3</h1>
+              <br />
               <div className="container flex flex-wrap justify-between">
 
                 {courses_year_3.map((data: any, index: any) => (
@@ -161,7 +169,8 @@ export default async function Home() {
             <br />
             <br />
             <div className="">
-              <h1 className="text-xl">Year 4</h1>
+              <h1 className="text-3xl font-bold">Year 4</h1>
+              <br />
               <div className="container flex flex-wrap">
 
                 {courses_year_4.map((data: any, index: any) => (

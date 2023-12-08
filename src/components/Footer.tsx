@@ -6,7 +6,7 @@ import { GitHubLogoIcon, TwitterLogoIcon, InstagramLogoIcon, DiscordLogoIcon, Li
 
 export default function Footer() {
     return (
-        <div className='border-t-2 border-violet-400'>
+        <div className='border-t-2 border-yellow-200'>
             <br />
             <div className="flex border-spacing-1 bg-blend-color-dodge font-light align-middle justify-center">
                 <footer className=" text-white pt-2">
