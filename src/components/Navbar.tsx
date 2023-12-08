@@ -2,6 +2,8 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import club_logo from '../../public/Club Logo.svg';
+import Image from "next/image";
 
 
 
@@ -34,23 +36,15 @@ export default function Navbar() {
 								href="/about"
 								className="duration-200 text-white hover:text-zinc-400 p-2"
 							>
-								About
-							</Link>
-
-							<Link
-								href="/portfolio"
-								className="duration-200 text-white hover:text-zinc-800 border-violet-600 border-2 hover:bg-violet-200 focus:bg-violet-200 focus:text-zinc-800 rounded-lg p-2"
-							>
-								Portfolio
+								Home
 							</Link>
 						</div>
 
 						<Link
-							href="/"
+							href="#"
 							className="duration-200 text-zinc-300 hover:text-zinc-100"
 						>
-							{/* if its not a home page, display the arrow, else dont */}
-							<ArrowLeft className="w-6 h-6 " />
+							<Image src={club_logo} alt="club logo" width={40} height={40} />
 						</Link>
 					</div>
 				</div>
