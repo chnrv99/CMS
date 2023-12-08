@@ -15,7 +15,7 @@ export default function PDFs_links(props: any) {
         <ScrollArea className="flex h-[40vh] w-[50vh] rounded-md border">
 
             <div className="">
-                {data.pdfs.map((data: any, index: any) => (
+                {data.map((data: any, index: any) => (
 
                     <div key={index} className='flex my-1 py-4 px-4 bg-slate-400 text-black'>
                         

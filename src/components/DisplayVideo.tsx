@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function DisplayVideo(props: any) {
     let data = props.data
-    console.log("selected video title is:", data.video_title)
+    console.log("selected video title is:", data)
     return (
         <>
 
