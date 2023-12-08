@@ -7,6 +7,7 @@ import { GetServerSidePropsContext } from 'next';
 
 export async function POST(request: any, response: any) {
     const {course_code, course_title} = await request.json();
+    await connectMongoDB();
     if (!course_code || !course_title) {
         return NextResponse.json({message:"Missing fields"}, {status: 400});
     }
