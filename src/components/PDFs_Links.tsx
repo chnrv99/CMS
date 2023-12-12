@@ -17,7 +17,7 @@ export default function PDFs_links(props: any) {
             <div className="">
                 {data.map((data: any, index: any) => (
 
-                    <div key={index} className='flex my-1 py-4 px-4 bg-yellow-100 text-black'>
+                    <div key={index} className='flex my-1 py-4 px-4 bg-pink-100 text-black'>
                         
 
                         <Link href={data.link} className=" mx-2 text-xl cursor-pointer">

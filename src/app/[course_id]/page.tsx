@@ -167,7 +167,7 @@ export default function Home({ params }: { params: { course_id: string } }) {
 
   const data = courseData.videos
   const pdfs = courseData.pdfs
-  if (data != undefined || pdfs != undefined) {
+  if (data != undefined && pdfs != undefined && selectedVideo!=undefined) {
     console.log("The course data is:", courseData)
     console.log("Selected Video:", courseData.videos[0])
     // handleVideoClick(courseData.videos[0])
@@ -186,11 +186,14 @@ export default function Home({ params }: { params: { course_id: string } }) {
           <br />
           <br />
           <br />
-          <h1 className="text-5xl bg-gradient-to-r items-center justify-center from-yellow-100 to-yellow-600 text-transparent bg-clip-text font-bold text-center border-b-2 border-yellow-200 mb-28 pb-4 mx-auto">
+          <h1 className="text-5xl bg-gradient-to-r items-center justify-center text-pink-600  bg-clip-text font-bold text-center mb-28 pb-4 mx-auto">
             Mathematics Club VITC CMS
           </h1>
           <div className="lg:flex lg:flex-row items-center justify-center md:flex md:flex-col ">
             <div className="container lg:self-center pb-2 lg:ml-20">
+            <div className=' md:container text-3xl font-bold text-pink-500'>
+              Download PDFs
+            </div>
 
               <DisplayVideo data={selectedVideo} />
             </div>
@@ -204,7 +207,7 @@ export default function Home({ params }: { params: { course_id: string } }) {
           <br />
 
           <div className="flex flex-col  mb-2">
-            <div className=' lg:ml-28 md:container text-3xl font-bold text-yellow-100'>
+            <div className=' lg:ml-28 md:container text-3xl font-bold text-pink-500'>
               Download PDFs
             </div>
             <div className="container lg:ml-20">

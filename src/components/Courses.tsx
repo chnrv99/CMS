@@ -38,10 +38,10 @@ let url = 'http://localhost:3000/'
 export default function Courses({ className, ...props }: any) {
     console.log(props)
     return (
-        <Card className={cn("w-auto h-auto hover:border-yellow-100 transition-colors", className)} {...props}>
+        <Card className={cn("w-auto h-auto hover:border-pink-100 transition-colors", className)} {...props}>
             <CardHeader>
                 <div className="flex justify-between">
-                    <CardTitle className="flex text-yellow-50">{props.data.title}</CardTitle>
+                    <CardTitle className="flex text-pink-400">{props.data.title}</CardTitle>
 
 
                 </div>
@@ -56,7 +56,7 @@ export default function Courses({ className, ...props }: any) {
                     >
                         <span className="flex h-2 w-2 translate-y-1 rounded-full" />
                         <div className="space-y-1">
-                            <p className="text-xl text-yellow-50 font-medium leading-none">
+                            <p className="text-xl text-pink-400 font-medium leading-none">
                                 {props.data.course_code}
                             </p>
 
@@ -70,7 +70,7 @@ export default function Courses({ className, ...props }: any) {
                         <span className="flex h-2 w-2 translate-y-1 rounded-full" />
                         <div className="space-y-1">
 
-                            <p className="text-sm text-yellow-50 ">
+                            <p className="text-sm text-pink-200 ">
                                 {props.data.course_description}
                             </p>
                         </div>
@@ -82,7 +82,7 @@ export default function Courses({ className, ...props }: any) {
             </CardContent>
             <CardFooter>
                 <Link href={props.data.course_code}>
-                    <Button className="w-full bg-yellow-200">
+                    <Button className="w-full bg-pink-200">
                        Go to course
                     </Button>
                 </Link>

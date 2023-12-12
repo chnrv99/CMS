@@ -10,7 +10,7 @@ export default function DisplayVideo(props: any) {
         <>
             <div className='flex'>
                 <div className='relative' style={{ paddingBottom: '35.25%', paddingLeft: '40.25%', paddingRight: '20.25%' }}>
-                    <h1 className="text-3xl font-bold text-yellow-100">{data.video_title}</h1>
+                    <h1 className="text-3xl font-bold text-pink-100">{data.video_title}</h1>
                     <br />
 
                     <iframe
