@@ -39,40 +39,7 @@ export default function Navbar() {
 								Home
 							</Link>
 
-							<Link
-								href="#"
-								className="duration-200 text-pink-100 hover:text-zinc-400 p-2 text-2xl font-semibold"
-							>
-								About
-							</Link>
-
-							<Link
-								href="#"
-								className="duration-200 text-pink-100 hover:text-zinc-400 p-2 text-2xl font-semibold"
-							>
-								Event
-							</Link>
-
-							<Link
-								href="#"
-								className="duration-200 text-pink-100 hover:text-zinc-400 p-2 text-2xl font-semibold"
-							>
-								Team
-							</Link>
-
-							<Link
-								href="#"
-								className="duration-200 text-pink-100 hover:text-zinc-400 p-2 text-2xl font-semibold"
-							>
-								Gallery
-							</Link>
-
-							<Link
-								href="#"
-								className="duration-200 text-pink-100 hover:text-zinc-400 p-2 text-2xl font-semibold"
-							>
-								Join Us
-							</Link>
+							
 						</div>
 
 						<Link
