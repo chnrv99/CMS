@@ -97,16 +97,16 @@ import Image from 'next/image'
 let url = 'http://localhost:3000/'
 
 async function getCourses() {
-  // const res = await fetch(url + 'api/fetchData', {cache: "no-store"})
+  const res = await fetch(url + 'api/fetchData', {cache: "no-store"})
 
-  // const data = await res.json()
-  // console.log("The data is:", data)
-  // return data
-
-  await connectMongoDB();
-  const data = await Course.find({});
-
+  const data = await res.json()
+  console.log("The data is:", data)
   return data
+
+  // await connectMongoDB();
+  // const data = await Course.find({});
+
+  // return data
 
 }
 
