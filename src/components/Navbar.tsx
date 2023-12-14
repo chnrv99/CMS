@@ -25,10 +25,7 @@ export default function Navbar() {
 		return (
 			<header ref={ref}>
 				<div
-					className={`fixed inset-x-0 top-0 z-50 backdrop-blur  duration-200 border-b  ${isIntersecting
-						? "bg-zinc-900/0 border-transparent"
-						: "bg-zinc-900/500  border-zinc-800"
-						}`}
+					className={`fixed inset-x-0 top-0 z-50 bg-[#0D232E]`}
 				>
 					<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
 						<div className="flex justify-between gap-8">

@@ -123,7 +123,8 @@ export default async function Home() {
   return (
     <>
       <Navbar />
-      <div className='flex flex-col  bg-black text-yellow-100 '>
+      <br />
+      <div className='flex flex-col  bg-[#0F1922] text-yellow-100 '>
         <br />
         <br />
         <br />
