@@ -82,7 +82,7 @@ export default function Courses({ className, ...props }: any) {
             </CardContent>
             <CardFooter>
                 <Link href={props.data.course_code}>
-                    <Button className="w-full bg-pink-200">
+                    <Button className="w-full bg-pink-300">
                        Go to course
                     </Button>
                 </Link>
